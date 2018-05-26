@@ -61,7 +61,7 @@ module.exports = {
     //debugUseColors: true,
 
     // The file containing the flows. If not set, it defaults to flows_<hostname>.json
-    //flowFile: 'flows.json',
+    flowFile: process.env.FLOW_FILE || 'flows.json',
 
     // To enabled pretty-printing of the flow within the flow file, set the following
     //  property to true:
@@ -77,7 +77,7 @@ module.exports = {
 
     // By default, all user data is stored in the Node-RED install directory. To
     // use a different location, the following property can be used
-    userDir: process.env.USER_DIR,
+    // userDir: process.env.USER_DIR,
 
     // Node-RED scans the `nodes` directory in the install directory to find nodes.
     // The following property can be used to specify an additional directory to scan.
