@@ -26,7 +26,7 @@ module.exports = {
     // To listen on all IPv6 addresses, set uiHost to "::",
     // The following property can be used to listen on a specific interface. For
     // example, the following would only allow connections from the local machine.
-    //uiHost: "127.0.0.1",
+    uiHost: process.env.UI_HOST || "0.0.0.0",
 
     // Retry time in milliseconds for MQTT connections
     mqttReconnectTime: 15000,
@@ -101,7 +101,7 @@ module.exports = {
     // When httpAdminRoot is used to move the UI to a different root path, the
     // following property can be used to identify a directory of static content
     // that should be served at http://localhost:1880/.
-    //httpStatic: '/home/nol/node-red-static/',
+    httpStatic: process.env.HTTP_STATIC,
 
     // The maximum size of HTTP request that will be accepted by the runtime api.
     // Default: 5mb

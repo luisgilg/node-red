@@ -77,6 +77,8 @@ if (parsedArgs.argv.remain.length > 0) {
     flowFile = parsedArgs.argv.remain[0];
 }
 
+const auxPath = "";
+
 if (parsedArgs.settings) {
     // User-specified settings file
     settingsFile = parsedArgs.settings;
@@ -87,11 +89,11 @@ if (parsedArgs.settings) {
     if (fs.existsSync(path.join(process.env.NODE_RED_HOME,".config.json"))) {
         // NODE_RED_HOME contains user data - use its settings.js
         settingsFile = path.join(process.env.NODE_RED_HOME,"settings.js");
-    } else if (process.env.HOMEPATH && fs.existsSync(path.join(process.env.HOMEPATH,".node-red",".config.json"))) {
+    } else if (process.env.HOMEPATH && fs.existsSync(path.join(process.env.HOMEPATH,auxPath,".config.json"))) {
         // Consider compatibility for older versions
-        settingsFile = path.join(process.env.HOMEPATH,".node-red","settings.js");
+        settingsFile = path.join(process.env.HOMEPATH,auxPath,"settings.js");
     } else {
-        var userDir = parsedArgs.userDir || path.join(process.env.HOME || process.env.USERPROFILE || process.env.HOMEPATH,".node-red");
+        var userDir = parsedArgs.userDir || path.join(process.env.HOME || process.env.USERPROFILE || process.env.HOMEPATH,auxPath);
         var userSettingsFile = path.join(userDir,"settings.js");
         if (fs.existsSync(userSettingsFile)) {
             // $HOME/.node-red/settings.js exists
@@ -177,7 +179,7 @@ if (parsedArgs.port !== undefined){
     }
 }
 
-settings.uiHost = settings.uiHost||"0.0.0.0";
+settings.uiHost = settings.uiHost || "0.0.0.0";
 
 if (flowFile) {
     settings.flowFile = flowFile;
