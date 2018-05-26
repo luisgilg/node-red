@@ -83,6 +83,8 @@ module.exports = {
     // The following property can be used to specify an additional directory to scan.
     nodesDir: process.env.NODES_DIR,
 
+    coreNodesDir:process.env.NODES_CORE,
+
     // By default, the Node-RED UI is available at http://localhost:1880/
     // The following property can be used to specify a different root path.
     // If set to false, this is disabled.
@@ -150,6 +152,8 @@ module.exports = {
     // is not affected by this option. To disable both the editor and the admin
     // API, use either the httpRoot or httpAdminRoot properties
     disableEditor: false,
+
+    SKIP_BUILD_CHECK: process.env.SKIP_BUILD_CHECK,
 
     // The following property can be used to configure cross-origin resource sharing
     // in the HTTP nodes.
