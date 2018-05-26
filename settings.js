@@ -77,26 +77,26 @@ module.exports = {
 
     // By default, all user data is stored in the Node-RED install directory. To
     // use a different location, the following property can be used
-    //userDir: '/home/nol/.node-red/',
+    userDir: process.env.USER_DIR,
 
     // Node-RED scans the `nodes` directory in the install directory to find nodes.
     // The following property can be used to specify an additional directory to scan.
-    //nodesDir: '/home/nol/.node-red/nodes',
+    nodesDir: process.env.NODES_DIR,
 
     // By default, the Node-RED UI is available at http://localhost:1880/
     // The following property can be used to specify a different root path.
     // If set to false, this is disabled.
-    //httpAdminRoot: '/admin',
+    httpAdminRoot: process.env.ADMIN_ROOT,
 
     // Some nodes, such as HTTP In, can be used to listen for incoming http requests.
     // By default, these are served relative to '/'. The following property
     // can be used to specifiy a different root path. If set to false, this is
     // disabled.
-    //httpNodeRoot: '/red-nodes',
+    httpNodeRoot: process.env.NODE_ROOT,
 
     // The following property can be used in place of 'httpAdminRoot' and 'httpNodeRoot',
     // to apply the same root to both parts.
-    //httpRoot: '/red',
+    httpRoot: process.env.HTTP_ROOT,
 
     // When httpAdminRoot is used to move the UI to a different root path, the
     // following property can be used to identify a directory of static content
@@ -105,11 +105,11 @@ module.exports = {
 
     // The maximum size of HTTP request that will be accepted by the runtime api.
     // Default: 5mb
-    //apiMaxLength: '5mb',
+    apiMaxLength: '5mb',
 
     // If you installed the optional node-red-dashboard you can set it's path
     // relative to httpRoot
-    //ui: { path: "ui" },
+    ui: { path: "ui" },
 
     // Securing Node-RED
     // -----------------
@@ -149,16 +149,16 @@ module.exports = {
     // The following property can be used to disable the editor. The admin API
     // is not affected by this option. To disable both the editor and the admin
     // API, use either the httpRoot or httpAdminRoot properties
-    //disableEditor: false,
+    disableEditor: false,
 
     // The following property can be used to configure cross-origin resource sharing
     // in the HTTP nodes.
     // See https://github.com/troygoode/node-cors#configuration-options for
     // details on its contents. The following is a basic permissive set of options:
-    //httpNodeCors: {
-    //    origin: "*",
-    //    methods: "GET,PUT,POST,DELETE"
-    //},
+    httpNodeCors: {
+        origin: "*",
+        methods: "GET"
+    },
 
     // If you need to set an http proxy please set an environment variable
     // called http_proxy (or HTTP_PROXY) outside of Node-RED in the operating system.
@@ -229,9 +229,9 @@ module.exports = {
             // off - turn off all logging (doesn't affect metrics or audit)
             level: "info",
             // Whether or not to include metric events in the log output
-            metrics: false,
+            metrics: true,
             // Whether or not to include audit events in the log output
-            audit: false
+            audit: true
         }
     },
 
@@ -239,7 +239,7 @@ module.exports = {
     editorTheme: {
         projects: {
             // To enable the Projects feature, set this value to true
-            enabled: false
+            enabled: true
         }
     }
 }
