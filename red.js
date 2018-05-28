@@ -277,9 +277,11 @@ function getListenPath() {
         port = settings.uiPort;
     }
 
-    var listenPath = 'http'+(settings.https?'s':'')+'://'+
-                    (settings.uiHost == '::'?'localhost':(settings.uiHost == '0.0.0.0'?'127.0.0.1':settings.uiHost))+
-                    ':'+port;
+    // var listenPath = 'http'+(settings.https?'s':'')+'://'+
+    //                 (settings.uiHost == '::'?'localhost':(settings.uiHost == '0.0.0.0'?'127.0.0.1':settings.uiHost))+
+    //                 ':'+port;
+    var listenPath = 'http'+(settings.https?'s':'')+'://'+ settings.uiHost + ':'+port;
+
     if (settings.httpAdminRoot !== false) {
         listenPath += settings.httpAdminRoot;
     } else if (settings.httpStatic) {
