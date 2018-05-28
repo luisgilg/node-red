@@ -13,7 +13,8 @@
     "start": "node red.js",
     "test": "grunt",
     "build": "grunt build",
-    "publish": "grunt build"
+    "publish": "grunt build",
+    "postinstall": "grunt build"
   },
   "contributors": [
     {
