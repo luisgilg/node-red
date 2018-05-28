@@ -16,7 +16,7 @@ if [ $rc -eq 0 ]; then
 		./configure --prefix=$HOME/git
 		make
 		make install
-		PATH=$HOME/git:$PATH
+		PATH=$HOME/git/bin:$PATH
 		#echo "Remove git"
 		#yum remove git
 		#echo "Install git"
