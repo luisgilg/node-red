@@ -6,11 +6,21 @@ rc=$?
 
 if [ $rc -eq 0 ]; then
     echo "After successful assembling"
-				npm run build
-				#echo "Remove git"
-				#yum remove git
-				#echo "Install git"
-				#yum install git
+		npm run build
+	echo "Installing git"
+		mkdir git
+		wget https://github.com/git/git/archive/v2.17.0.tar.gz
+		tar -zxf v2.17.0.tar.gz
+		cd git-2.17.0
+		make configure
+		./configure --prefix=$HOME/git
+		make
+		make install
+		PATH=$HOME/git:$PATH
+		#echo "Remove git"
+		#yum remove git
+		#echo "Install git"
+		#yum install git
 else
     echo "After failed assembling"
 fi
