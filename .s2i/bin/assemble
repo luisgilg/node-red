@@ -6,10 +6,11 @@ rc=$?
 
 if [ $rc -eq 0 ]; then
     echo "After successful assembling"
-				echo "Remove git"
-				yum remove git
-				echo "Install git"
-				yum install git
+				npm run build
+				#echo "Remove git"
+				#yum remove git
+				#echo "Install git"
+				#yum install git
 else
     echo "After failed assembling"
 fi
