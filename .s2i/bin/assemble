@@ -17,6 +17,7 @@ if [ $rc -eq 0 ]; then
 		make
 		make install
 		PATH=$HOME/git/bin:$PATH
+		git --version
 		#echo "Remove git"
 		#yum remove git
 		#echo "Install git"
