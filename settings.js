@@ -231,11 +231,11 @@ module.exports = {
             // debug - record information which is more verbose than info + info + warn + error + fatal errors
             // trace - record very detailed logging + debug + info + warn + error + fatal errors
             // off - turn off all logging (doesn't affect metrics or audit)
-            level: "info",
+            level: process.env.LOG_LEVEL,
             // Whether or not to include metric events in the log output
-            metrics: false,
+            metrics: process.env.LOG_METRICS,
             // Whether or not to include audit events in the log output
-            audit: false
+            audit: process.env.LOG_AUDIT
         }
     },
 
