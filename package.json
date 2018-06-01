@@ -55,6 +55,7 @@
     "json-stringify-safe": "5.0.1",
     "jsonata": "1.5.4",
     "lodash": "^4.17.10",
+    "marko": "^4.10.0",
     "media-typer": "0.3.0",
     "memorystore": "1.6.0",
     "mqtt": "2.18.0",
