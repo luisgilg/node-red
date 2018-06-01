@@ -208,6 +208,7 @@ module.exports = {
     //    context.global.os
 
     functionGlobalContext: {
+        _:require('lodash')
         // os:require('os'),
         // jfive:require("johnny-five"),
         // j5board:require("johnny-five").Board({repl:false})
@@ -231,11 +232,11 @@ module.exports = {
             // debug - record information which is more verbose than info + info + warn + error + fatal errors
             // trace - record very detailed logging + debug + info + warn + error + fatal errors
             // off - turn off all logging (doesn't affect metrics or audit)
-            level: process.env.LOG_LEVEL,
+            level: process.env.LOG_LEVEL || "info",
             // Whether or not to include metric events in the log output
-            metrics: process.env.LOG_METRICS,
+            metrics: process.env.LOG_METRICS || false,
             // Whether or not to include audit events in the log output
-            audit: process.env.LOG_AUDIT
+            audit: process.env.LOG_AUDIT || false
         }
     },
 
