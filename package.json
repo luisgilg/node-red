@@ -80,6 +80,7 @@
     "passport-http-bearer": "1.0.1",
     "passport-oauth2-client-password": "0.1.2",
     "raw-body": "2.3.3",
+    "red-contrib-marko": "git+https://github.com/luisgilg/node-red-contrib-marko.git",
     "semver": "5.5.0",
     "sentiment": "2.1.0",
     "uglify-js": "3.3.25",
